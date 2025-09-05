@@ -106,20 +106,20 @@
   const featuredHotels = document.getElementById('featuredHotels');
   if (featuredHotels) {
     [
-      { title: 'Seaside Resort', subtitle: 'Goa · 5★', image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1200&auto=format&fit=crop', href: 'hotel-details.html' },
-      { title: 'Royal Palace', subtitle: 'Jaipur · 5★', image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1200&auto=format&fit=crop', href: 'hotel-details.html' },
-      { title: 'Mountain Retreat', subtitle: 'Manali · 4★', image: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=1200&auto=format&fit=crop', href: 'hotel-details.html' },
-      { title: 'City Business Hotel', subtitle: 'Kolkata · 4★', image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1200&auto=format&fit=crop', href: 'hotel-details.html' }
+      { title: 'Seaside Resort', subtitle: 'Goa · 5★', image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1200&auto=format&fit=crop', href: 'hotel_details.html' },
+      { title: 'Royal Palace', subtitle: 'Jaipur · 5★', image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1200&auto=format&fit=crop', href: 'hotel_details.html' },
+      { title: 'Mountain Retreat', subtitle: 'Manali · 4★', image: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=1200&auto=format&fit=crop', href: 'hotel_details.html' },
+      { title: 'City Business Hotel', subtitle: 'Kolkata · 4★', image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1200&auto=format&fit=crop', href: 'hotel_details.html' }
     ].forEach(card => featuredHotels.appendChild(createCard(card)));
   }
 
   const featuredDestinations = document.getElementById('featuredDestinations');
   if (featuredDestinations) {
     [
-      { title: 'Kashmir', subtitle: '7D/6N', image: 'https://images.unsplash.com/photo-1615909692708-33ea538408c4?q=80&w=1200&auto=format&fit=crop', href: 'destination-details.html' },
-      { title: 'Rajasthan', subtitle: '6D/5N', image: 'https://images.unsplash.com/photo-1588099768531-a7f85a5b4a10?q=80&w=1200&auto=format&fit=crop', href: 'destination-details.html' },
-      { title: 'Sikkim', subtitle: '5D/4N', image: 'https://images.unsplash.com/photo-1629932628390-62ae9f9a3d1e?q=80&w=1200&auto=format&fit=crop', href: 'destination-details.html' },
-      { title: 'Thailand', subtitle: '5D/4N', image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop', href: 'destination-details.html' }
+      { title: 'Kashmir', subtitle: '7D/6N', image: 'https://images.unsplash.com/photo-1615909692708-33ea538408c4?q=80&w=1200&auto=format&fit=crop', href: 'destination_details.html' },
+      { title: 'Rajasthan', subtitle: '6D/5N', image: 'https://images.unsplash.com/photo-1588099768531-a7f85a5b4a10?q=80&w=1200&auto=format&fit=crop', href: 'destination_details.html' },
+      { title: 'Sikkim', subtitle: '5D/4N', image: 'https://images.unsplash.com/photo-1629932628390-62ae9f9a3d1e?q=80&w=1200&auto=format&fit=crop', href: 'destination_details.html' },
+      { title: 'Thailand', subtitle: '5D/4N', image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop', href: 'destination_details.html' }
     ].forEach(card => featuredDestinations.appendChild(createCard(card)));
   }
 
