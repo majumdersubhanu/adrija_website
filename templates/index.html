@@ -1,186 +1,204 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adrija Tours & Travels - Home</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="min-h-screen flex flex-col bg-white text-gray-900">
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur border-b border-gray-200 transition-shadow">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="index.html" class="font-semibold text-lg">Adrija Tours & Travels</a>
-      <nav class="hidden md:flex items-center gap-6">
-        <a class="hover:text-blue-600" href="index.html">Home</a>
-        <a class="hover:text-blue-600" href="destinations.html">Destinations</a>
-        <a class="hover:text-blue-600" href="hotels.html">Hotels</a>
-        <a class="hover:text-blue-600" href="blog.html">Blog</a>
-        <a class="hover:text-blue-600" href="contact.html">Contact</a>
-      </nav>
-      <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded hover:bg-gray-100" aria-label="Open Menu">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </button>
-    </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
-      <div class="px-4 py-3 flex flex-col gap-3">
-        <a class="hover:text-blue-600" href="index.html">Home</a>
-        <a class="hover:text-blue-600" href="destinations.html">Destinations</a>
-        <a class="hover:text-blue-600" href="hotels.html">Hotels</a>
-        <a class="hover:text-blue-600" href="blog.html">Blog</a>
-        <a class="hover:text-blue-600" href="contact.html">Contact</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="flex-1 pt-16">
-    <!-- Hero with image carousel -->
+{% extends 'base.html' %}
+{% block title %}Home - Adrija Tours & Travels{% endblock %}
+{% block content %}
     <section class="relative bg-gradient-to-b from-blue-50 to-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        <div class="relative rounded-xl overflow-hidden ring-1 ring-black/5">
-          <div id="heroCarousel" class="relative aspect-[16/7] sm:aspect-[16/6] lg:aspect-[16/5] bg-gray-200">
-            <div class="absolute inset-0">
-              <img id="heroImage" src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1600&auto=format&fit=crop" alt="Scenic" class="w-full h-full object-cover" />
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+            <div class="relative rounded-xl overflow-hidden ring-1 ring-black/5">
+                <div id="heroCarousel" class="relative aspect-[16/7] sm:aspect-[16/6] lg:aspect-[16/5] bg-gray-200">
+                    <div class="absolute inset-0">
+                        <img id="heroImage"
+                             src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1600&auto=format&fit=crop"
+                             alt="Scenic" class="w-full h-full object-cover"/>
+                    </div>
+                    <div class="absolute inset-0 bg-black/30"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-6 sm:p-10 text-white">
+                        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight drop-shadow">Explore India and
+                            Beyond</h1>
+                        <p class="mt-3 text-base sm:text-lg text-white/90">Tailored experiences for corporate and
+                            leisure travelers.</p>
+                        <div class="mt-6 flex flex-wrap gap-3">
+                            <a href="{% url 'destinations' %}"
+                               class="inline-flex items-center px-5 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 shadow">Browse
+                                Destinations</a>
+                            <a href="#customTrip"
+                               class="inline-flex items-center px-5 py-3 bg-white text-gray-900 rounded hover:bg-gray-100 shadow">Plan
+                                a Custom Trip</a>
+                        </div>
+                    </div>
+                    <button id="heroPrev" aria-label="Previous"
+                            class="absolute left-3 top-1/2 -translate-y-1/2 grid place-items-center w-10 h-10 rounded-full bg-white/80 hover:bg-white">
+                        <span class="sr-only">Prev</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                             class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button id="heroNext" aria-label="Next"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 grid place-items-center w-10 h-10 rounded-full bg-white/80 hover:bg-white">
+                        <span class="sr-only">Next</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                             class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div class="absolute inset-0 bg-black/30"></div>
-            <div class="absolute inset-x-0 bottom-0 p-6 sm:p-10 text-white">
-              <h1 class="text-3xl sm:text-5xl font-bold tracking-tight drop-shadow">Explore India and Beyond</h1>
-              <p class="mt-3 text-base sm:text-lg text-white/90">Tailored experiences for corporate and leisure travelers.</p>
-              <div class="mt-6 flex flex-wrap gap-3">
-                <a href="destinations.html" class="inline-flex items-center px-5 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 shadow">Browse Destinations</a>
-                <a href="#customTrip" class="inline-flex items-center px-5 py-3 bg-white text-gray-900 rounded hover:bg-gray-100 shadow">Plan a Custom Trip</a>
-              </div>
-            </div>
-            <button id="heroPrev" aria-label="Previous" class="absolute left-3 top-1/2 -translate-y-1/2 grid place-items-center w-10 h-10 rounded-full bg-white/80 hover:bg-white">
-              <span class="sr-only">Prev</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-            </button>
-            <button id="heroNext" aria-label="Next" class="absolute right-3 top-1/2 -translate-y-1/2 grid place-items-center w-10 h-10 rounded-full bg-white/80 hover:bg-white">
-              <span class="sr-only">Next</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </button>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- Custom Trip Request -->
     <section id="customTrip" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm reveal">
-        <h2 class="text-xl sm:text-2xl font-semibold">Plan Your Custom Trip</h2>
-        <form id="customTripForm" class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
-          <div class="lg:col-span-2">
-            <label for="destination" class="block text-sm font-medium text-gray-700">Destination</label>
-            <select id="destination" class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option value="">Select a destination</option>
-              <option>Kashmir</option>
-              <option>Rajasthan</option>
-              <option>Goa</option>
-              <option>Sikkim</option>
-              <option>Thailand</option>
-            </select>
-          </div>
-          <div>
-            <label for="people" class="block text-sm font-medium text-gray-700">People</label>
-            <input id="people" type="number" min="1" value="2" class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          </div>
-          <div>
-            <label for="startDate" class="block text-sm font-medium text-gray-700">Start Date</label>
-            <input id="startDate" type="date" class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          </div>
-          <div>
-            <label for="endDate" class="block text-sm font-medium text-gray-700">End Date</label>
-            <input id="endDate" type="date" class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          </div>
-          <div>
-            <label for="package" class="block text-sm font-medium text-gray-700">Package</label>
-            <select id="package" class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option>Luxury</option>
-              <option>Standard</option>
-              <option>Economy</option>
-            </select>
-          </div>
-          <div class="lg:self-end">
-            <button type="submit" class="btn btn-primary w-full shadow">Submit</button>
-          </div>
-        </form>
-        <p id="customTripMsg" class="mt-3 text-sm text-green-600 hidden">Your request has been received. We will contact you soon.</p>
-      </div>
-    </section>
-
-    <!-- Who we are -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid gap-8 lg:grid-cols-2 items-center">
-        <div>
-          <h2 class="text-2xl font-semibold">Who We Are</h2>
-          <p class="mt-3 text-gray-600">We curate unforgettable journeys with meticulous planning, local expertise, and customer-first service. From corporate retreats to family vacations, we deliver seamless travel experiences.</p>
-          <div class="mt-4 grid gap-4 sm:grid-cols-3">
-            <div class="p-4 border rounded">
-              <p class="font-semibold">Pan-India</p>
-              <p class="text-sm text-gray-600">From the Himalayas to Kanyakumari.</p>
-            </div>
-            <div class="p-4 border rounded">
-              <p class="font-semibold">International</p>
-              <p class="text-sm text-gray-600">Growing global destination network.</p>
-            </div>
-            <div class="p-4 border rounded">
-              <p class="font-semibold">Corporate & Leisure</p>
-              <p class="text-sm text-gray-600">Tailored for teams and families.</p>
-            </div>
-          </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm reveal">
+            <h2 class="text-xl sm:text-2xl font-semibold">Plan Your Custom Trip</h2>
+            <form id="customTripForm" class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+                <div class="lg:col-span-2">
+                    <label for="destination" class="block text-sm font-medium text-gray-700">Destination</label>
+                    <select id="destination"
+                            class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">Select a destination</option>
+                        {% for destination in featured_destinations %}
+                            <option>{{ destination.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <label for="people" class="block text-sm font-medium text-gray-700">People</label>
+                    <input id="people" type="number" min="1" value="2"
+                           class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                </div>
+                <div>
+                    <label for="startDate" class="block text-sm font-medium text-gray-700">Start Date</label>
+                    <input id="startDate" type="date"
+                           class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                </div>
+                <div>
+                    <label for="endDate" class="block text-sm font-medium text-gray-700">End Date</label>
+                    <input id="endDate" type="date"
+                           class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                </div>
+                <div>
+                    <label for="package" class="block text-sm font-medium text-gray-700">Package</label>
+                    <select id="package"
+                            class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>Luxury</option>
+                        <option>Standard</option>
+                        <option>Economy</option>
+                    </select>
+                </div>
+                <div class="lg:self-end">
+                    <button type="submit"
+                            class="w-full shadow inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                        Submit
+                    </button>
+                </div>
+            </form>
+            <p id="customTripMsg" class="mt-3 text-sm text-green-600 hidden">Your request has been received. We will
+                contact you soon.</p>
         </div>
-        <div class="aspect-video bg-gradient-to-br from-blue-100 via-white to-purple-100 rounded-xl"></div>
-      </div>
     </section>
 
-    <!-- Featured hotels -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="flex items-end justify-between mb-4">
-        <h2 class="text-2xl font-semibold">Featured Hotels</h2>
-        <a href="hotels.html" class="text-blue-600 hover:underline">View all</a>
-      </div>
-      <div id="featuredHotels" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 reveal"></div>
-    </section>
-
-    <!-- Featured destinations -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="flex items-end justify-between mb-4">
-        <h2 class="text-2xl font-semibold">Featured Destinations</h2>
-        <a href="destinations.html" class="text-blue-600 hover:underline">View all</a>
-      </div>
-      <div id="featuredDestinations" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 reveal"></div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 class="text-2xl font-semibold mb-6">What Our Travelers Say</h2>
-      <div id="testimonials" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 reveal"></div>
-    </section>
-
-    <!-- FAQs -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 class="text-2xl font-semibold mb-6">FAQs</h2>
-      <div id="faqs" class="divide-y divide-gray-200 border rounded-xl reveal"></div>
-    </section>
-  </main>
-
-  <footer class="border-t border-gray-200 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-gray-600">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>© <span id="year"></span> Adrija Tours & Travels. All rights reserved.</p>
-        <div class="flex gap-4">
-          <a class="hover:text-blue-600" href="contact.html">Contact</a>
-          <a class="hover:text-blue-600" href="#">Privacy</a>
-          <a class="hover:text-blue-600" href="#">Terms</a>
+        <div class="grid gap-8 lg:grid-cols-2 items-center">
+            <div>
+                <h2 class="text-2xl font-semibold">Who We Are</h2>
+                <p class="mt-3 text-gray-600">We curate unforgettable journeys with meticulous planning, local
+                    expertise, and customer-first service. From corporate retreats to family vacations, we deliver
+                    seamless travel experiences.</p>
+                <div class="mt-4 grid gap-4 sm:grid-cols-3">
+                    <div class="p-4 border rounded">
+                        <p class="font-semibold">Pan-India</p>
+                        <p class="text-sm text-gray-600">From the Himalayas to Kanyakumari.</p>
+                    </div>
+                    <div class="p-4 border rounded">
+                        <p class="font-semibold">International</p>
+                        <p class="text-sm text-gray-600">Growing global destination network.</p>
+                    </div>
+                    <div class="p-4 border rounded">
+                        <p class="font-semibold">Corporate & Leisure</p>
+                        <p class="text-sm text-gray-600">Tailored for teams and families.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="aspect-video bg-gradient-to-br from-blue-100 via-white to-purple-100 rounded-xl"></div>
         </div>
-      </div>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-  <script src="script.js"></script>
-</body>
-</html>
+    </section>
 
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex items-end justify-between mb-4">
+            <h2 class="text-2xl font-semibold">Featured Hotels</h2>
+            <a href="{% url 'hotels' %}" class="text-blue-600 hover:underline">View all</a>
+        </div>
+        <div id="featuredHotels" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 reveal">
+            {% for hotel in featured_hotels %}
+                <div class="group border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition bg-white">
+                    <a href="{% url 'hotel_detail' hotel.slug %}" class="block">
+                        <div class="aspect-video bg-gray-100">
+                            <img src="{{ hotel.image.url }}" alt="{{ hotel.name }}"
+                                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"/>
+                        </div>
+                        <div class="p-4">
+                            <p class="font-medium">{{ hotel.name }}</p>
+                            <p class="text-sm text-gray-600">{{ hotel.destination.name }} · {{ hotel.rating }}★</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
 
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex items-end justify-between mb-4">
+            <h2 class="text-2xl font-semibold">Featured Destinations</h2>
+            <a href="{% url 'destinations' %}" class="text-blue-600 hover:underline">View all</a>
+        </div>
+        <div id="featuredDestinations" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 reveal">
+            {% for destination in featured_destinations %}
+                <div class="group border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition bg-white">
+                    <a href="{% url 'destination_detail' destination.slug %}" class="block">
+                        <div class="aspect-video bg-gray-100">
+                            <img src="{{ destination.image.url }}" alt="{{ destination.name }}"
+                                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"/>
+                        </div>
+                        <div class="p-4">
+                            <p class="font-medium">{{ destination.name }}</p>
+                            <p class="text-sm text-gray-600">{{ destination.country }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 class="text-2xl font-semibold mb-6">What Our Travelers Say</h2>
+        <div id="testimonials" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 reveal">
+            <div class="border rounded p-4">
+                <p class="italic">“Flawless experience from booking to return. Highly recommend!”</p>
+                <p class="mt-3 font-medium">Ananya S.</p>
+            </div>
+            <div class="border rounded p-4">
+                <p class="italic">“Our corporate offsite was perfectly executed.”</p>
+                <p class="mt-3 font-medium">Rahul K.</p>
+            </div>
+            <div class="border rounded p-4">
+                <p class="italic">“Family trip to Kashmir was unforgettable!”</p>
+                <p class="mt-3 font-medium">Priya D.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 class="text-2xl font-semibold mb-6">FAQs</h2>
+        <div id="faqs" class="divide-y divide-gray-200 border rounded-xl reveal">
+            {% for faq in faqs %}
+                <div class="p-4">
+                    <button class="w-full flex items-center justify-between text-left" aria-expanded="false"
+                            data-faq-idx="{{ forloop.counter0 }}">
+                        <span class="font-medium">{{ faq.question }}</span>
+                        <span class="ml-4 text-gray-500">+</span>
+                    </button>
+                    <div class="mt-2 text-gray-600 hidden" id="faq-{{ forloop.counter0 }}">{{ faq.answer }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
