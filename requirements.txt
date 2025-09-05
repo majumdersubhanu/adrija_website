@@ -1,4 +1,14 @@
 asgiref==3.9.1
-Django==5.2.6
+Django==5.2.5
+django-appconf==1.1.0
+django-compressor==4.5.1
+django-phonenumber-field==8.1.0
 django-tinymce==4.1.0
+Faker==37.6.0
+phonenumbers==9.0.12
+pillow==11.3.0
+rcssmin==1.1.2
+rjsmin==1.2.2
 sqlparse==0.5.3
+tzdata==2025.2
+whitenoise==6.9.0
